@@ -173,495 +173,184 @@
         </div>
     </header>
 
-    <!-- SECCIÓN HERO CINEMATOGRÁFICA / SLIDESHOW EDITORIAL -->
-    <section id="inicio" class="relative min-h-[85vh] flex items-center bg-brand-red overflow-hidden">
-        <!-- Fondos con Zoom Sutil -->
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-brand-red/40 z-10"></div>
-            <!-- Slider de imágenes arquitectónicas espectaculares -->
-            <img id="hero-bg"
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920"
-                alt="Residencias Cesar Tamayo"
-                class="w-full h-full object-cover transition-all duration-1000 transform scale-105 filter brightness-95">
-        </div>
+<!-- HERO BUSCADOR -->
+<section class="bg-brand-charcoal text-brand-ivory pt-32 pb-16 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1920" alt="Buscador" class="w-full h-full object-cover">
+    </div>
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+        <h1 class="font-serif text-4xl md:text-5xl mb-4">Encuentra tu propiedad ideal</h1>
+        <p class="text-brand-ivory/70 font-light max-w-2xl mx-auto">Explora nuestro selecto catálogo de propiedades y desarrollos exclusivos en México.</p>
+    </div>
+</section>
 
-        <div class="relative z-20 max-w-7xl mx-auto px-6 py-20 w-full flex flex-col justify-center">
-            <div class="max-w-3xl">
-                <!-- Sello Editorial arriba -->
-                <div class="flex items-center space-x-3 mb-6">
-                    <span class="h-[1px] w-12 bg-brand-gold"></span>
-                    <span class="text-brand-gold font-semibold tracking-[0.25em] text-xs uppercase">César Tamayo
-                        Rodríguez</span>
-                </div>
-
-                <h1 class="font-serif text-4xl sm:text-5xl lg:text-7xl text-brand-ivory leading-tight mb-6">
-                    El espacio que <br class="hidden sm:inline">
-                    <span class="italic text-brand-gold">proyectas</span>, en las mejores manos.
-                </h1>
-
-                <p class="text-brand-ivory/80 text-base md:text-lg max-w-xl font-light mb-10 leading-relaxed">
-                    Casas extraordinarias, desarrollos residenciales selectos y propiedades industriales con el respaldo
-                    de una asesoría con impecable ética en Culiacán, Mazatlán y los mejores puntos de México.
-                </p>
-
-                <div
-                    class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="propiedades.html"
-                        class="bg-brand-gold text-brand-red font-bold text-xs uppercase tracking-widest px-8 py-4 hover:bg-brand-ivory hover:text-brand-red transition-all duration-300 text-center rounded-sm">
-                        Explorar Catálogo
-                    </a>
-                    <a href="desarrollos.html"
-                        class="border border-brand-ivory/40 text-brand-ivory hover:border-brand-gold hover:text-brand-gold text-xs uppercase tracking-widest font-bold px-8 py-4 transition-all duration-300 text-center rounded-sm">
-                        Ver Desarrollos Premium
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Indicador de Scroll -->
-        <div
-            class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center space-y-1 text-brand-ivory/60">
-            <span class="text-[10px] tracking-[0.2em] uppercase font-light">Desplazar</span>
-            <div class="w-5 h-8 border-2 border-brand-ivory/30 rounded-full flex justify-center p-1">
-                <div class="w-1 h-2 bg-brand-gold rounded-full animate-bounce"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BUSCADOR EDITORIAL FLOTANTE E INTELIGENTE -->
-    <section id="buscador-seccion" class="relative z-30 max-w-6xl mx-auto px-6 -mt-12 sm:-mt-16">
-        <div class="bg-brand-ivory border border-brand-gold/30 p-6 md:p-8 rounded-sm shadow-2xl">
-            <!-- Pestañas de tipo de Operación -->
-            <div class="flex space-x-2 mb-6 border-b border-brand-gold/10 pb-4">
-                <button id="op-all" onclick="setOperacion('all')"
-                    class="px-5 py-2 text-xs font-bold uppercase tracking-wider border-b-2 border-brand-red text-brand-red transition-all">
-                    Cualquiera
-                </button>
-                <button id="op-venta" onclick="setOperacion('Venta')"
-                    class="px-5 py-2 text-xs font-semibold uppercase tracking-wider text-brand-charcoal/60 hover:text-brand-red transition-all">
-                    En Venta
-                </button>
-                <button id="op-renta" onclick="setOperacion('Renta')"
-                    class="px-5 py-2 text-xs font-semibold uppercase tracking-wider text-brand-charcoal/60 hover:text-brand-red transition-all">
-                    En Renta
-                </button>
-            </div>
-
-            <!-- Filtros principales -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Filtro Ubicación -->
-                <div class="flex flex-col">
-                    <label
-                        class="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-2">Ubicación</label>
-                    <div class="relative">
-                        <select id="filtro-ubicacion" onchange="ejecutarFiltro()"
-                            class="w-full bg-stone-50 border border-stone-200 text-brand-charcoal text-xs py-3.5 px-4 pr-10 focus:outline-none focus:border-brand-gold transition-colors appearance-none">
-                            <option value="all">Todas las ciudades</option>
-                            <option value="Culiacán">Culiacán, Sin.</option>
-                            <option value="Mazatlán">Mazatlán, Sin.</option>
-                            <option value="CDMX">CDMX (Polanco)</option>
-                            <option value="Guadalajara">Guadalajara, Jal.</option>
-                            <option value="Obregón">Ciudad Obregón, Son.</option>
-                            <option value="Monclova">Monclova, Coah.</option>
-                            <option value="Coatzacoalcos">Coatzacoalcos, Ver.</option>
-                            <option value="Valle de Chalco">Valle de Chalco, EdoMex</option>
-                        </select>
-                        <i
-                            class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-brand-gold pointer-events-none text-xs"></i>
-                    </div>
-                </div>
-
-                <!-- Filtro Tipo de Propiedad -->
-                <div class="flex flex-col">
-                    <label class="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-2">Tipo de
-                        Propiedad</label>
-                    <div class="relative">
-                        <select id="filtro-tipo" onchange="ejecutarFiltro()"
-                            class="w-full bg-stone-50 border border-stone-200 text-brand-charcoal text-xs py-3.5 px-4 pr-10 focus:outline-none focus:border-brand-gold transition-colors appearance-none">
-                            <option value="all">Cualquiera</option>
-                            <option value="Casa">Casa</option>
-                            <option value="Departamento">Departamento</option>
-                            <option value="Bodega">Bodega Industrial</option>
-                            <option value="Terreno">Terreno / Predio</option>
-                            <option value="Local">Local Comercial</option>
-                            <option value="Edificio">Edificio</option>
-                        </select>
-                        <i
-                            class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-brand-gold pointer-events-none text-xs"></i>
-                    </div>
-                </div>
-
-                <!-- Filtro Recámaras -->
-                <div class="flex flex-col">
-                    <label
-                        class="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-2">Recámaras</label>
-                    <div class="relative">
-                        <select id="filtro-recamaras" onchange="ejecutarFiltro()"
-                            class="w-full bg-stone-50 border border-stone-200 text-brand-charcoal text-xs py-3.5 px-4 pr-10 focus:outline-none focus:border-brand-gold transition-colors appearance-none">
-                            <option value="all">Cualquiera</option>
-                            <option value="1">1 Recámara</option>
-                            <option value="2">2 Recámaras</option>
-                            <option value="3">3 Recámaras</option>
-                            <option value="4">4 Recámaras</option>
-                            <option value="5">5+ Recámaras</option>
-                        </select>
-                        <i
-                            class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-brand-gold pointer-events-none text-xs"></i>
-                    </div>
-                </div>
-
-                <!-- Filtro Ordenamiento -->
-                <div class="flex flex-col">
-                    <label class="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-2">Ordenar
-                        Por</label>
-                    <div class="relative">
-                        <select id="filtro-orden" onchange="ejecutarFiltro()"
-                            class="w-full bg-stone-50 border border-stone-200 text-brand-charcoal text-xs py-3.5 px-4 pr-10 focus:outline-none focus:border-brand-gold transition-colors appearance-none">
-                            <option value="recent">Más recientes</option>
-                            <option value="price-asc">Precio: Menor a Mayor</option>
-                            <option value="price-desc">Precio: Mayor a Menor</option>
-                        </select>
-                        <i
-                            class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-brand-gold pointer-events-none text-xs"></i>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Rango de Precios Interactivo -->
-            <div
-                class="mt-6 pt-6 border-t border-brand-gold/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div class="w-full md:w-2/3">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="text-[10px] uppercase tracking-widest text-brand-gold font-bold">Rango de
-                            Precios</span>
-                        <span id="rango-precio-display"
-                            class="text-xs font-semibold text-brand-red bg-brand-red/10 px-3 py-1 rounded-sm">$1,000 —
-                            $270,000,000 MXN</span>
-                    </div>
-                    <input type="range" id="filtro-precio" min="1000" max="270000000" value="270000000" step="50000"
-                        oninput="actualizarSliderDisplay()" onchange="ejecutarFiltro()"
-                        class="w-full h-1.5 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-brand-gold">
-                </div>
-                <button onclick="limpiarFiltros()"
-                    class="text-xs text-stone-500 hover:text-brand-red font-semibold tracking-wider uppercase transition-colors">
-                    <i class="fa-solid fa-rotate-right mr-1.5"></i> Restablecer Filtros
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- DESTACADOS CAROUSEL EDITORIAL: DESARROLLOS EXCLUSIVOS -->
-    <section id="desarrollos" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
-            <div>
-                <span class="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block">Alta Gama
-                    Arquitectónica</span>
-                <h2 class="font-serif text-3xl md:text-5xl text-brand-red">Nuestros Desarrollos Exclusivos</h2>
-            </div>
-            <p class="text-stone-500 max-w-md font-light text-sm mt-4 md:mt-0 leading-relaxed">
-                Proyectos emblemáticos diseñados para redefinir el estilo de vida residencial de lujo y generar el más
-                alto retorno de inversión.
-            </p>
-        </div>
-
-        <!-- Carrusel Horizontal -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <!-- Almarena -->
-            <div onclick="filtrarPorDesarrollo('Almarena')"
-                class="group relative h-[380px] bg-brand-red overflow-hidden cursor-pointer shadow-lg rounded-sm transition-transform duration-300 hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600"
-                    alt="Almarena"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-red via-transparent to-transparent opacity-90">
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 flex flex-col justify-end h-full w-full">
-                    <span class="text-brand-gold text-[10px] tracking-[0.3em] font-bold uppercase mb-1">Culiacán /
-                        Mazatlán</span>
-                    <h3 class="font-serif text-xl text-brand-ivory mb-2">Almarena</h3>
-                    <p class="text-brand-ivory/70 text-xs font-light line-clamp-2 mb-4">Departamentos residenciales
-                        premium y lotes con acceso exclusivo a club de playa.</p>
-                    <span
-                        class="text-brand-gold text-xs font-semibold tracking-wider uppercase group-hover:translate-x-2 transition-transform duration-300">Explorar
-                        <i class="fa-solid fa-arrow-right-long ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Acacia -->
-            <div onclick="filtrarPorDesarrollo('Acacia')"
-                class="group relative h-[380px] bg-brand-red overflow-hidden cursor-pointer shadow-lg rounded-sm transition-transform duration-300 hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=600"
-                    alt="Acacia"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-red via-transparent to-transparent opacity-90">
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 flex flex-col justify-end h-full w-full">
-                    <span class="text-brand-gold text-[10px] tracking-[0.3em] font-bold uppercase mb-1">Culiacán,
-                        Sin.</span>
-                    <h3 class="font-serif text-xl text-brand-ivory mb-2">Acacia</h3>
-                    <p class="text-brand-ivory/70 text-xs font-light line-clamp-2 mb-4">Privacidad absoluta y diseño
-                        bioclimático en un entorno verde sin igual.</p>
-                    <span
-                        class="text-brand-gold text-xs font-semibold tracking-wider uppercase group-hover:translate-x-2 transition-transform duration-300">Explorar
-                        <i class="fa-solid fa-arrow-right-long ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Paralela -->
-            <div onclick="filtrarPorDesarrollo('Paralela')"
-                class="group relative h-[380px] bg-brand-red overflow-hidden cursor-pointer shadow-lg rounded-sm transition-transform duration-300 hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600"
-                    alt="Paralela"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-red via-transparent to-transparent opacity-90">
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 flex flex-col justify-end h-full w-full">
-                    <span class="text-brand-gold text-[10px] tracking-[0.3em] font-bold uppercase mb-1">Culiacán /
-                        Corporativo</span>
-                    <h3 class="font-serif text-xl text-brand-ivory mb-2">Paralela</h3>
-                    <p class="text-brand-ivory/70 text-xs font-light line-clamp-2 mb-4">Oficinas ejecutivas de primer
-                        mundo y espacios comerciales integrados.</p>
-                    <span
-                        class="text-brand-gold text-xs font-semibold tracking-wider uppercase group-hover:translate-x-2 transition-transform duration-300">Explorar
-                        <i class="fa-solid fa-arrow-right-long ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Montemar -->
-            <div onclick="filtrarPorDesarrollo('Montemar')"
-                class="group relative h-[380px] bg-brand-red overflow-hidden cursor-pointer shadow-lg rounded-sm transition-transform duration-300 hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600"
-                    alt="Montemar"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-red via-transparent to-transparent opacity-90">
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 flex flex-col justify-end h-full w-full">
-                    <span class="text-brand-gold text-[10px] tracking-[0.3em] font-bold uppercase mb-1">Mazatlán,
-                        Sin.</span>
-                    <h3 class="font-serif text-xl text-brand-ivory mb-2">Montemar Luxury</h3>
-                    <p class="text-brand-ivory/70 text-xs font-light line-clamp-2 mb-4">Exclusivos condominios frente al
-                        océano Pacífico con amenidades extraordinarias.</p>
-                    <span
-                        class="text-brand-gold text-xs font-semibold tracking-wider uppercase group-hover:translate-x-2 transition-transform duration-300">Explorar
-                        <i class="fa-solid fa-arrow-right-long ml-1"></i></span>
-                </div>
-            </div>
-
-            <!-- Nativa -->
-            <div onclick="filtrarPorDesarrollo('Nativa')"
-                class="group relative h-[380px] bg-brand-red overflow-hidden cursor-pointer shadow-lg rounded-sm transition-transform duration-300 hover:-translate-y-2">
-                <img src="https://images.unsplash.com/photo-1602941525421-8f8b81d3edbb?auto=format&fit=crop&q=80&w=600"
-                    alt="Nativa"
-                    class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80 filter brightness-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-red via-transparent to-transparent opacity-90">
-                </div>
-                <div class="absolute bottom-0 left-0 p-6 flex flex-col justify-end h-full w-full">
-                    <span class="text-brand-gold text-[10px] tracking-[0.3em] font-bold uppercase mb-1">Culiacán /
-                        Jardín</span>
-                    <h3 class="font-serif text-xl text-brand-ivory mb-2">Nativa Residencial</h3>
-                    <p class="text-brand-ivory/70 text-xs font-light line-clamp-2 mb-4">Lotes premium y exclusivas
-                        residencias en un bosque privado dentro de la ciudad.</p>
-                    <span
-                        class="text-brand-gold text-xs font-semibold tracking-wider uppercase group-hover:translate-x-2 transition-transform duration-300">Explorar
-                        <i class="fa-solid fa-arrow-right-long ml-1"></i></span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- GALERÍA DE PROPIEDADES EN REJILLA ASIMÉTRICA EDITORIAL -->
-    <section class="bg-[#F4F2EB] py-24 border-t border-b border-brand-gold/10">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12">
+<!-- CONTENEDOR PRINCIPAL DEL CATÁLOGO -->
+<section class="max-w-screen-2xl mx-auto px-4 md:px-6 py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+        
+        <!-- SIDEBAR DE FILTROS -->
+        <aside class="w-full lg:w-1/4 bg-white p-6 shadow-sm border border-brand-gold/20 rounded-sm self-start sticky top-24">
+            <h2 class="font-serif text-xl text-brand-red mb-6 border-b border-brand-gold/20 pb-2">Filtros Avanzados</h2>
+            
+            <form id="filtros-form" class="space-y-6">
+                <!-- Operación -->
                 <div>
-                    <span class="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block">Catálogo
-                        Exclusivo</span>
-                    <h2 id="catalogo-titulo" class="font-serif text-3xl md:text-5xl text-brand-red">Propiedades
-                        Seleccionadas</h2>
+                    <label class="block text-xs font-bold text-brand-charcoal uppercase tracking-wider mb-2">Operación</label>
+                    <select id="filtro-operacion" class="w-full border border-gray-200 p-2 text-sm text-brand-charcoal focus:border-brand-gold focus:ring-0 outline-none bg-gray-50">
+                        <option value="all">Todas</option>
+                        <option value="venta">Venta</option>
+                        <option value="renta">Renta</option>
+                    </select>
                 </div>
-                <div class="flex items-center space-x-4 mt-6 md:mt-0">
-                    <span id="propiedades-encontradas"
-                        class="text-xs text-stone-500 font-semibold tracking-wider">Mostrando 0 propiedades</span>
+
+                <!-- Ubicación -->
+                <div>
+                    <label class="block text-xs font-bold text-brand-charcoal uppercase tracking-wider mb-2">Ubicación</label>
+                    <select id="filtro-ubicacion" class="w-full border border-gray-200 p-2 text-sm text-brand-charcoal focus:border-brand-gold focus:ring-0 outline-none bg-gray-50">
+                        <option value="all">Cualquier Ubicación</option>
+                        <option value="Culiacán">Culiacán</option>
+                        <option value="Mazatlán">Mazatlán</option>
+                    </select>
                 </div>
-            </div>
 
-            <!-- Grid Asimétrico de Propiedades -->
-            <div id="grid-propiedades" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Se inyecta dinámicamente con JavaScript -->
-            </div>
-
-            <!-- Mensaje Sin Resultados -->
-            <div id="sin-resultados"
-                class="hidden text-center py-20 bg-brand-ivory border border-dashed border-brand-gold/30 rounded-sm">
-                <i class="fa-regular fa-folder-open text-4xl text-brand-gold mb-4"></i>
-                <h3 class="font-serif text-xl text-brand-red mb-2">No encontramos propiedades con esos filtros</h3>
-                <p class="text-stone-500 text-xs max-w-sm mx-auto font-light">Prueba ampliando tu rango de precio o
-                    seleccionando otra ubicación dentro de nuestro catálogo.</p>
-                <button onclick="limpiarFiltros()"
-                    class="mt-6 bg-brand-red text-brand-ivory text-xs uppercase tracking-wider font-bold px-6 py-3 hover:bg-brand-gold hover:text-brand-red transition-all">Ver
-                    todas las propiedades</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- MÓDULO ¿EN QUÉ MÁS TE PODEMOS ASESORAR? -->
-    <section id="servicios" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold mb-2 block">César Tamayo Real
-                Estate</span>
-            <h2 class="font-serif text-3xl md:text-5xl text-brand-red mb-4">Asesoría Inmobiliaria de Alto Nivel</h2>
-            <div class="h-[1px] w-24 bg-brand-gold mx-auto mb-6"></div>
-            <p class="text-stone-500 text-sm font-light leading-relaxed">
-                Nuestra vocación no radica únicamente en comercializar inmuebles, sino en guiar decisiones estratégicas
-                para tu patrimonio o negocio bajo un esquema transparente.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Servicio 1 -->
-            <div class="bg-brand-ivory p-8 border border-brand-gold/10 hover:border-brand-gold transition-colors group">
-                <div
-                    class="text-brand-gold text-3xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
-                    <i class="fa-solid fa-hotel"></i>
+                <!-- Tipo -->
+                <div>
+                    <label class="block text-xs font-bold text-brand-charcoal uppercase tracking-wider mb-2">Tipo de Propiedad</label>
+                    <select id="filtro-tipo" class="w-full border border-gray-200 p-2 text-sm text-brand-charcoal focus:border-brand-gold focus:ring-0 outline-none bg-gray-50">
+                        <option value="all">Cualquier Tipo</option>
+                        <option value="casa">Casa</option>
+                        <option value="departamento">Departamento</option>
+                        <option value="terreno">Terreno</option>
+                        <option value="oficina">Oficina / Local</option>
+                        <option value="bodega">Bodega Industrial</option>
+                    </select>
                 </div>
-                <h3 class="font-serif text-xl text-brand-red mb-3">Las mejores propiedades</h3>
-                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                    Sometemos cada inmueble de nuestro portafolio a una rigurosa evaluación de plusvalía, legalidad y
-                    estado físico para ofrecer únicamente inversiones inteligentes y hogares seguros.
-                </p>
-            </div>
 
-            <!-- Servicio 2 -->
-            <div class="bg-brand-ivory p-8 border border-brand-gold/10 hover:border-brand-gold transition-colors group">
-                <div
-                    class="text-brand-gold text-3xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-                <h3 class="font-serif text-xl text-brand-red mb-3">Asesoría de Expertos</h3>
-                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                    Un equipo liderado directamente por César Tamayo Rodríguez con absoluto dominio del mercado en
-                    Sinaloa y los principales centros económicos de México.
-                </p>
-            </div>
-
-            <!-- Servicio 3 -->
-            <div class="bg-brand-ivory p-8 border border-brand-gold/10 hover:border-brand-gold transition-colors group">
-                <div
-                    class="text-brand-gold text-3xl mb-6 group-hover:scale-110 transition-transform duration-300 inline-block">
-                    <i class="fa-solid fa-file-signature"></i>
-                </div>
-                <h3 class="font-serif text-xl text-brand-red mb-3">Ayuda con los Trámites</h3>
-                <p class="text-stone-500 text-xs font-light leading-relaxed">
-                    Te acompañamos en cada fase del proceso burocrático: desde la validación de escrituras y gestiones
-                    notariales hasta la obtención de dictámenes óptimos para uso de suelo industrial.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- HISTORIA Y QUIÉNES SOMOS -->
-    <section id="nosotros" class="bg-brand-red text-brand-ivory py-24">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5 relative">
-                <!-- Imagen enmarcada estilo premium editorial -->
-                <div class="absolute -top-4 -left-4 border-t border-l border-brand-gold w-16 h-16"></div>
-                <div class="absolute -bottom-4 -right-4 border-b border-r border-brand-gold w-16 h-16"></div>
-                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
-                    alt="Cesar Tamayo Real Estate Corporativo"
-                    class="w-full h-[450px] object-cover filter brightness-90 relative z-10 p-2">
-            </div>
-
-            <div class="lg:col-span-7 space-y-6 lg:pl-6">
-                <span class="text-xs uppercase tracking-[0.25em] text-brand-gold font-bold">Un Legado de
-                    Confianza</span>
-                <h2 class="font-serif text-3xl md:text-5xl">César Tamayo Rodríguez</h2>
-                <p class="text-brand-ivory/80 text-sm font-light leading-relaxed">
-                    Fundada bajo principios inquebrantables de profesionalismo y transparencia, nuestra firma se ha
-                    consolidado como el puente idóneo entre los mejores desarrollos de México y clientes con perfiles
-                    sumamente exigentes.
-                </p>
-                <p class="text-brand-ivory/80 text-sm font-light leading-relaxed">
-                    Desde hermosas residencias en La Primavera hasta majestuosos desarrollos costeros en Mazatlán o
-                    naves logísticas en parques industriales de alto rendimiento, nuestra meta es asegurar que cada
-                    transacción ocurra de forma armoniosa y legalmente infalible.
-                </p>
-
-                <div class="grid grid-cols-2 gap-6 pt-6">
-                    <div class="border-l-2 border-brand-gold pl-4">
-                        <span class="font-serif text-3xl text-brand-gold font-bold block">100%</span>
-                        <span class="text-[11px] uppercase tracking-wider text-brand-ivory/70">Legalidad
-                            Garantizada</span>
-                    </div>
-                    <div class="border-l-2 border-brand-gold pl-4">
-                        <span class="font-serif text-3xl text-brand-gold font-bold block">+15 Años</span>
-                        <span class="text-[11px] uppercase tracking-wider text-brand-ivory/70">Experiencia de
-                            Mercado</span>
+                <!-- Recámaras -->
+                <div>
+                    <label class="block text-xs font-bold text-brand-charcoal uppercase tracking-wider mb-2">Recámaras</label>
+                    <div class="flex space-x-2">
+                        <button type="button" class="flex-1 py-1 border border-gray-200 hover:border-brand-gold text-sm transition-colors bg-white">1+</button>
+                        <button type="button" class="flex-1 py-1 border border-gray-200 hover:border-brand-gold text-sm transition-colors bg-white">2+</button>
+                        <button type="button" class="flex-1 py-1 border border-gray-200 hover:border-brand-gold text-sm transition-colors bg-white">3+</button>
+                        <button type="button" class="flex-1 py-1 border border-gray-200 hover:border-brand-gold text-sm transition-colors bg-white">4+</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- NUESRO CÓDIGO DE ÉTICA -->
-    <section id="codigo-etica" class="py-24 max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-7 space-y-6">
-                <span class="text-xs uppercase tracking-[0.2em] text-brand-gold font-bold">Compromiso
-                    Deontológico</span>
-                <h2 class="font-serif text-3xl md:text-5xl text-brand-red">Nuestro Código de Ética</h2>
-                <p class="text-stone-500 text-sm font-light leading-relaxed">
-                    Entendemos que comprar o rentar un inmueble involucra los anhelos de familias enteras y los recursos
-                    estratégicos de corporativos industriales. Por ello, operamos bajo un estricto Código de Ética que
-                    asegura:
-                </p>
-
-                <ul class="space-y-3.5">
-                    <li class="flex items-start">
-                        <i class="fa-solid fa-check text-brand-gold mt-1 mr-3 text-sm"></i>
-                        <span class="text-xs text-stone-600 font-light"><strong
-                                class="font-semibold text-brand-red">Honestidad en Precios:</strong> Todos nuestros
-                            importes y comisiones son orientados al valor real del mercado sin sobreprecios
-                            ocultos.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fa-solid fa-check text-brand-gold mt-1 mr-3 text-sm"></i>
-                        <span class="text-xs text-stone-600 font-light"><strong
-                                class="font-semibold text-brand-red">Transparencia Legal:</strong> No promovemos
-                            inmuebles con vicios jurídicos, herencias inconclusas o gravámenes no declarados.</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fa-solid fa-check text-brand-gold mt-1 mr-3 text-sm"></i>
-                        <span class="text-xs text-stone-600 font-light"><strong
-                                class="font-semibold text-brand-red">Trato Equitativo:</strong> Garantizamos las mismas
-                            prerrogativas éticas y atención tanto a compradores de propiedades de entrada como a grandes
-                            corporaciones transnacionales.</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="lg:col-span-5 bg-stone-50 p-8 md:p-10 border border-brand-gold/30 rounded-sm">
-                <i class="fa-solid fa-scale-balanced text-4xl text-brand-gold mb-6"></i>
-                <h3 class="font-serif text-2xl text-brand-red mb-4">Garantía Inmobiliaria</h3>
-                <p class="text-stone-500 text-xs font-light leading-relaxed mb-6">
-                    "En mi carácter de fundador, firmo y respondo de que cada operación bajo mi sello cumpla cabalmente
-                    con las normas del sector y el respeto absoluto al patrimonio del cliente."
-                </p>
-                <div class="flex items-center space-x-4">
-                    <div
-                        class="bg-brand-red text-brand-ivory h-12 w-12 rounded-full flex items-center justify-center font-serif text-lg font-bold">
-                        CT
-                    </div>
-                    <div>
-                        <h4 class="text-xs font-bold text-brand-red uppercase tracking-wider">César Tamayo Rodríguez
-                        </h4>
-                        <span class="text-[10px] text-brand-gold uppercase tracking-wider font-semibold">Director
-                            General</span>
+                <!-- Precio -->
+                <div>
+                    <label class="block text-xs font-bold text-brand-charcoal uppercase tracking-wider mb-2">Rango de Precio</label>
+                    <input type="range" id="rango-precio" min="7000" max="270000000" class="w-full accent-brand-gold">
+                    <div class="flex justify-between text-xs text-brand-charcoal/60 mt-2 font-medium">
+                        <span>$7K</span>
+                        <span id="precio-max-display">$270M</span>
                     </div>
                 </div>
+
+                <!-- Botón Aplicar -->
+                <button type="button" class="w-full bg-brand-red text-brand-ivory py-3 text-xs font-bold uppercase tracking-widest hover:bg-brand-gold hover:text-brand-red transition-colors mt-4">
+                    Aplicar Filtros
+                </button>
+            </form>
+        </aside>
+
+        <!-- ÁREA DE RESULTADOS (GRID + MAPA) -->
+        <div class="w-full lg:w-3/4 flex flex-col space-y-6">
+            <!-- Barra superior de resultados -->
+            <div class="flex justify-between items-center border-b border-brand-gold/20 pb-4">
+                <h3 class="font-serif text-2xl text-brand-charcoal">Resultados <span class="text-sm font-sans text-brand-charcoal/50">(3 Propiedades)</span></h3>
+                <div class="flex items-center space-x-4 text-sm">
+                    <button class="text-brand-red font-semibold hover:text-brand-gold transition-colors"><i class="fa-solid fa-grid mr-1"></i> Cuadrícula</button>
+                    <button class="text-gray-400 hover:text-brand-gold transition-colors"><i class="fa-solid fa-map mr-1"></i> Ver Mapa</button>
+                    <select class="border border-gray-200 p-1 text-xs outline-none bg-transparent text-brand-charcoal">
+                        <option>Más Recientes</option>
+                        <option>Menor a Mayor Precio</option>
+                        <option>Mayor a Menor Precio</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- GRID DE PROPIEDADES -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6" id="propiedades-grid">
+                <!-- Tarjeta de Ejemplo 1 -->
+                <a href="#" class="group block bg-white border border-brand-gold/10 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 left-4 z-20">
+                        <span class="bg-brand-red text-brand-ivory text-[9px] uppercase tracking-widest font-bold px-3 py-1 shadow-md">En Venta</span>
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800" alt="Propiedad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative bg-white">
+                        <p class="text-brand-gold font-bold text-xl mb-1">$ 14,500,000 MXN</p>
+                        <h4 class="font-serif text-lg text-brand-charcoal mb-2 truncate">Residencia de Autor La Primavera</h4>
+                        <p class="text-xs text-brand-charcoal/60 mb-4 truncate"><i class="fa-solid fa-location-dot mr-1"></i> Culiacán, La Primavera</p>
+                        
+                        <div class="flex justify-between items-center text-xs text-brand-charcoal border-t border-brand-gold/20 pt-4 font-medium">
+                            <span title="Recámaras"><i class="fa-solid fa-bed text-brand-gold mr-1"></i> 4</span>
+                            <span title="Baños"><i class="fa-solid fa-bath text-brand-gold mr-1"></i> 4.5</span>
+                            <span title="Metros Construcción"><i class="fa-solid fa-ruler-combined text-brand-gold mr-1"></i> 450m²</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Tarjeta de Ejemplo 2 -->
+                <a href="#" class="group block bg-white border border-brand-gold/10 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 left-4 z-20">
+                        <span class="bg-brand-charcoal text-brand-gold text-[9px] uppercase tracking-widest font-bold px-3 py-1 shadow-md">En Renta</span>
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Propiedad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative bg-white">
+                        <p class="text-brand-gold font-bold text-xl mb-1">$ 45,000 MXN / Mes</p>
+                        <h4 class="font-serif text-lg text-brand-charcoal mb-2 truncate">Penthouse con Vista al Mar</h4>
+                        <p class="text-xs text-brand-charcoal/60 mb-4 truncate"><i class="fa-solid fa-location-dot mr-1"></i> Mazatlán, Zona Dorada</p>
+                        
+                        <div class="flex justify-between items-center text-xs text-brand-charcoal border-t border-brand-gold/20 pt-4 font-medium">
+                            <span title="Recámaras"><i class="fa-solid fa-bed text-brand-gold mr-1"></i> 3</span>
+                            <span title="Baños"><i class="fa-solid fa-bath text-brand-gold mr-1"></i> 3</span>
+                            <span title="Metros Construcción"><i class="fa-solid fa-ruler-combined text-brand-gold mr-1"></i> 220m²</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Tarjeta de Ejemplo 3 -->
+                <a href="#" class="group block bg-white border border-brand-gold/10 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                    <div class="absolute top-4 left-4 z-20">
+                        <span class="bg-brand-red text-brand-ivory text-[9px] uppercase tracking-widest font-bold px-3 py-1 shadow-md">En Venta</span>
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&q=80&w=800" alt="Propiedad" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                    <div class="p-6 relative bg-white">
+                        <p class="text-brand-gold font-bold text-xl mb-1">$ 270,000,000 MXN</p>
+                        <h4 class="font-serif text-lg text-brand-charcoal mb-2 truncate">Torre Comercial Premium</h4>
+                        <p class="text-xs text-brand-charcoal/60 mb-4 truncate"><i class="fa-solid fa-location-dot mr-1"></i> Culiacán, Tres Ríos</p>
+                        
+                        <div class="flex justify-between items-center text-xs text-brand-charcoal border-t border-brand-gold/20 pt-4 font-medium">
+                            <span title="Tipo"><i class="fa-solid fa-building text-brand-gold mr-1"></i> Edificio</span>
+                            <span title="Metros Construcción"><i class="fa-solid fa-ruler-combined text-brand-gold mr-1"></i> 15,000m²</span>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+            
+            <!-- Paginación -->
+            <div class="flex justify-center items-center space-x-2 pt-8">
+                <button class="w-8 h-8 flex items-center justify-center border border-gray-200 text-gray-400 hover:text-brand-red transition-colors"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="w-8 h-8 flex items-center justify-center bg-brand-red text-white">1</button>
+                <button class="w-8 h-8 flex items-center justify-center border border-gray-200 text-brand-charcoal hover:bg-gray-50 transition-colors">2</button>
+                <button class="w-8 h-8 flex items-center justify-center border border-gray-200 text-brand-charcoal hover:bg-gray-50 transition-colors">3</button>
+                <span class="text-gray-400">...</span>
+                <button class="w-8 h-8 flex items-center justify-center border border-gray-200 text-gray-400 hover:text-brand-red transition-colors"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
         </div>
-    </section>
-
-    <!-- FOOTER PREMIUM -->
+    </div>
+</section>
     <footer class="bg-[#1C2321] text-brand-ivory pt-20 pb-8 border-t border-brand-gold/20">
         <div
             class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-brand-ivory/10">

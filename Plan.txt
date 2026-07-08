@@ -1,0 +1,37 @@
+1. Prompt para la página de "Propiedades" (El Catálogo)
+Esta página es el corazón de tu sitio. Debe estar optimizada para que el usuario encuentre rápido lo que busca usando tus filtros actuales
+.
+Copia y pega esto en Gemini:
+"Actúa como un experto en diseño web UX/UI. Necesito que diseñes la estructura de la página de 'Propiedades' (Catálogo) para la inmobiliaria Cesar Tamayo Real Estate.
+Contexto: En esta página mostraremos un inventario muy diverso, desde rentas de $7,000 hasta ventas de edificios de $270,000,000. Tenemos casas, departamentos, terrenos, oficinas, locales y bodegas industriales.
+Requerimientos del diseño:
+Buscador/Filtros Avanzados: Diseña una interfaz intuitiva para los filtros actuales: Operación (Renta/Venta), Ubicación, Tipo de Propiedad, Número de Recámaras (1 a 6) y un slider de Rango de Precios.
+Tarjetas de Propiedad (Cards): ¿Qué información visual y de texto debe llevar cada tarjeta de propiedad en los resultados de búsqueda para que sea atractiva? (Considera que mostramos precio, cuartos, baños y metros cuadrados).
+Vista de resultados: Propón cómo organizar la cuadrícula de resultados y cómo integrar un mapa interactivo. Dame la estructura de la página de arriba hacia abajo y sugerencias para que la navegación sea fluida en celulares."
+2. Prompt para los "Desarrollos Exclusivos" (Landing Pages)
+Tienes proyectos destacados en tu menú como Almarena, Acacia, Paralela y Montemar Luxury Living
+. Estas páginas no deben parecer un catálogo normal, sino páginas de aterrizaje (Landing Pages) enfocadas en vender un estilo de vida.
+Copia y pega esto en Gemini:
+"Actúa como un diseñador web experto en bienes raíces de lujo. Necesito la estructura ideal para las 'Landing Pages' de nuestros Desarrollos Exclusivos (como Montemar Luxury Living, Almarena, Acacia y Paralela).
+Contexto: Estos son proyectos premium y de preventa. Queremos que el usuario se enamore del proyecto antes de ver los precios exactos.
+Requerimientos del diseño:
+Sección Hero: ¿Cómo debe ser el encabezado inicial para impactar visualmente?
+Amenidades y Estilo de vida: ¿Cómo estructurar la información de las áreas comunes, ubicación y beneficios del desarrollo?
+Modelos disponibles: Sugiere una forma elegante de mostrar los diferentes prototipos de departamentos/casas dentro del desarrollo.
+Llamado a la acción (CTA): ¿Dónde y cómo colocar los botones para que el cliente agende una cita o descargue un brochure (folleto) por WhatsApp o correo? Descríbeme el orden de las secciones de esta página para maximizar la conversión de prospectos."
+3. Prompt para las páginas institucionales ("Quiénes Somos" y "Servicios")
+Estas páginas deben transmitir la confianza de estar respaldados por Cesar Tamayo Rodriguez y mostrar el valor agregado de la agencia
+.
+Copia y pega esto en Gemini:
+"Actúa como un estratega de contenido y diseñador web. Necesito diseñar las páginas corporativas de 'Quiénes Somos' y 'Nuestros Servicios' para una agencia de bienes raíces con fuerte presencia comercial e industrial.
+Contexto: No solo vendemos casas, también ofrecemos asesoría de expertos, ayuda con trámites, búsqueda personalizada y gestión de propiedades de alto valor comercial.
+Requerimientos del diseño:
+Para Quiénes Somos: Propón una estructura que cuente la historia de la empresa, presente al equipo de asesores y transmita confianza institucional.
+Para Servicios: Diseña un formato visual (como iconos o tarjetas) para explicar de forma clara nuestros pilares: Asesoría, Trámites, Búsquedas y Promoción de inmuebles.
+Contacto integrado: Propón un módulo final de contacto que invite al usuario a llamar, enviar correo o contactar por WhatsApp. Dame el esqueleto visual de cómo acomodar la información para que no sea un bloque de texto aburrido."
+4. Prompt para Páginas Legales ("Aviso de Privacidad" y "Código de Ética")
+Aunque son páginas de texto plano
+, una buena agencia cuida el diseño de estas secciones para que luzcan profesionales.
+Copia y pega esto en Gemini:
+"Como diseñador web, ¿cuál es la mejor práctica de UI/UX para presentar páginas legales extensas como el 'Aviso de Privacidad' y el 'Código de Ética' en el sitio web de una inmobiliaria? Sugiere una estructura que incluya un menú lateral anclado o formato de acordeón para que la lectura sea amigable y limpia, sin perder la seriedad corporativa."
+Mi recomendación de uso: Ejecuta estos prompts uno por uno. Una vez que la IA te dé la respuesta del primero (Propiedades), analízalo, y cuando estés satisfecho, continúa con el de Desarrollos. Así tendrás un diseño web integral perfectamente pensado para tu modelo de negocio.

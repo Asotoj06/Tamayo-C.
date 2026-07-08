@@ -83,16 +83,18 @@
         class="sticky top-0 z-40 bg-brand-ivory/90 backdrop-blur-md border-b border-brand-gold/10 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
             <!-- Logotipo Editorial -->
-            <a href="#" class="flex flex-col">
-                <span class="font-serif text-xl tracking-widest text-brand-red font-bold uppercase">Cesar Tamayo</span>
-                <span class="text-[9px] tracking-[0.25em] text-brand-gold font-semibold uppercase -mt-1">Real
-                    Estate</span>
+            <a href="#" class="flex items-center">
+                <img src="logo.png" alt="Cesar Tamayo Logo" class="h-24 w-auto object-contain scale-125 origin-right -mr-4">
+                <div class="flex flex-col z-10">
+                    <span class="font-serif text-xl tracking-widest text-brand-red font-bold uppercase">Cesar Tamayo</span>
+                    <span class="text-[9px] tracking-[0.25em] text-brand-gold font-semibold uppercase -mt-1">Real Estate</span>
+                </div>
             </a>
 
             <!-- Menú Principal -->
             <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
-                <a href="#inicio" class="text-brand-red border-b-2 border-brand-gold pb-1 transition-colors">Inicio</a>
-                <a href="#buscador-seccion" class="hover:text-brand-gold transition-colors">Propiedades</a>
+                <a href="index.html" class="text-brand-red border-b-2 border-brand-gold pb-1 transition-colors">Inicio</a>
+                <a href="propiedades.html" class="hover:text-brand-gold transition-colors">Propiedades</a>
                 <!-- Dropdown desarrollos -->
                 <div class="relative group">
                     <button class="hover:text-brand-gold transition-colors flex items-center space-x-1">
@@ -102,39 +104,28 @@
                     <div
                         class="absolute top-full left-0 mt-2 w-56 bg-brand-ivory border border-brand-gold/20 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
                         <div class="py-2">
-                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Almarena')"
+                            <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Almarena')"
                                 class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Almarena</a>
-                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Acacia')"
+                            <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Acacia')"
                                 class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Acacia</a>
-                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Paralela')"
+                            <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Paralela')"
                                 class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Paralela</a>
-                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Montemar')"
+                            <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Montemar')"
                                 class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Montemar
                                 Luxury Living</a>
-                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Nativa')"
+                            <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Nativa')"
                                 class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Nativa
                                 Jardín Residencial</a>
                         </div>
                     </div>
                 </div>
-                <a href="#servicios" class="hover:text-brand-gold transition-colors font-medium">Servicios</a>
-                <a href="#nosotros" class="hover:text-brand-gold transition-colors font-medium">Quienes Somos</a>
-                <a href="#codigo-etica" class="hover:text-brand-gold transition-colors font-medium">Código de Ética</a>
+                <a href="servicios.html" class="hover:text-brand-gold transition-colors font-medium">Servicios</a>
+                <a href="nosotros.html" class="hover:text-brand-gold transition-colors font-medium">Quienes Somos</a>
+                <a href="codigo-etica.html" class="hover:text-brand-gold transition-colors font-medium">Código de Ética</a>
             </nav>
 
             <!-- Acciones Premium -->
             <div class="hidden md:flex items-center space-x-4">
-                <button onclick="toggleFavoritosPanel()"
-                    class="relative p-2 text-brand-red hover:text-brand-gold transition-colors">
-                    <i class="fa-regular fa-heart text-lg"></i>
-                    <span id="fav-count"
-                        class="absolute top-0 right-0 bg-brand-gold text-brand-red text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center border border-brand-ivory">0</span>
-                </button>
-                <a href="https://wa.me/526671520988?text=Hola,%20quisiera%20solicitar%20asesoría%20personalizada%20con%20un%20experto."
-                    target="_blank"
-                    class="border border-brand-red bg-brand-red text-brand-ivory px-5 py-2.5 text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:border-brand-gold hover:text-brand-red transition-all duration-300 rounded-sm">
-                    Asesoría Privada
-                </a>
             </div>
 
             <!-- Hamburguesa Móvil -->
@@ -147,37 +138,33 @@
         <!-- Menú Móvil Desplegable -->
         <div id="mobile-menu"
             class="hidden lg:hidden bg-brand-ivory border-t border-brand-gold/10 px-6 py-4 space-y-4 shadow-lg absolute w-full left-0 z-40">
-            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-brand-red font-semibold">Inicio</a>
-            <a href="#buscador-seccion" onclick="toggleMobileMenu()"
+            <a href="index.html" onclick="toggleMobileMenu()" class="block text-brand-red font-semibold">Inicio</a>
+            <a href="propiedades.html" onclick="toggleMobileMenu()"
                 class="block text-brand-charcoal hover:text-brand-gold">Propiedades</a>
             <div class="py-2 border-y border-brand-gold/10">
                 <span
                     class="block text-[11px] font-bold uppercase tracking-wider text-brand-gold mb-2">Desarrollos</span>
                 <div class="grid grid-cols-2 gap-2 text-xs">
-                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Almarena'); toggleMobileMenu()"
+                    <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Almarena'); toggleMobileMenu()"
                         class="text-brand-charcoal">Almarena</a>
-                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Acacia'); toggleMobileMenu()"
+                    <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Acacia'); toggleMobileMenu()"
                         class="text-brand-charcoal">Acacia</a>
-                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Paralela'); toggleMobileMenu()"
+                    <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Paralela'); toggleMobileMenu()"
                         class="text-brand-charcoal">Paralela</a>
-                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Montemar'); toggleMobileMenu()"
+                    <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Montemar'); toggleMobileMenu()"
                         class="text-brand-charcoal">Montemar Luxury</a>
-                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Nativa'); toggleMobileMenu()"
+                    <a href="desarrollos.html" onclick="filtrarPorDesarrollo('Nativa'); toggleMobileMenu()"
                         class="text-brand-charcoal col-span-2">Nativa Jardín</a>
                 </div>
             </div>
-            <a href="#servicios" onclick="toggleMobileMenu()"
+            <a href="servicios.html" onclick="toggleMobileMenu()"
                 class="block text-brand-charcoal hover:text-brand-gold">Servicios</a>
-            <a href="#nosotros" onclick="toggleMobileMenu()"
+            <a href="nosotros.html" onclick="toggleMobileMenu()"
                 class="block text-brand-charcoal hover:text-brand-gold">Quiénes Somos</a>
-            <a href="#codigo-etica" onclick="toggleMobileMenu()"
+            <a href="codigo-etica.html" onclick="toggleMobileMenu()"
                 class="block text-brand-charcoal hover:text-brand-gold">Código de Ética</a>
             <div class="pt-4 flex justify-between items-center">
-                <button onclick="toggleFavoritosPanel(); toggleMobileMenu()"
-                    class="flex items-center space-x-2 text-brand-red">
-                    <i class="fa-solid fa-heart"></i>
-                    <span class="text-sm">Mis Favoritos</span>
-                </button>
+
                 <a href="https://wa.me/526671520988"
                     class="bg-brand-red text-brand-ivory px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm">
                     Contacto directo
