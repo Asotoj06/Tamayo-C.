@@ -1,0 +1,834 @@
+    <footer class="bg-[#1C2321] text-brand-ivory pt-20 pb-8 border-t border-brand-gold/20">
+        <div
+            class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-brand-ivory/10">
+            <!-- Columna 1: Logo & Descripción -->
+            <div class="space-y-4">
+                <a href="#" class="flex flex-col">
+                    <span class="font-serif text-2xl tracking-widest text-brand-ivory font-bold uppercase">Cesar
+                        Tamayo</span>
+                    <span class="text-[10px] tracking-[0.25em] text-brand-gold font-semibold uppercase -mt-1">Real
+                        Estate</span>
+                </a>
+                <p class="text-brand-ivory/60 text-xs font-light leading-relaxed pt-2">
+                    Bienes raíces exclusivos y asesoría con sólido respaldo ético y legal en todo México. Una empresa de
+                    Cesar Tamayo Rodríguez.
+                </p>
+            </div>
+
+            <!-- Columna 2: Navegación -->
+            <div class="space-y-4">
+                <h4 class="font-serif text-lg text-brand-gold">Nuestra Firma</h4>
+                <div class="grid grid-cols-1 gap-2.5 text-xs text-brand-ivory/70">
+                    <a href="#nosotros" class="hover:text-brand-gold transition-colors">Quiénes Somos</a>
+                    <a href="#servicios" class="hover:text-brand-gold transition-colors">Nuestros Servicios</a>
+                    <a href="#codigo-etica" class="hover:text-brand-gold transition-colors">Código de Ética</a>
+                    <a href="#" class="hover:text-brand-gold transition-colors">Aviso de Privacidad</a>
+                </div>
+            </div>
+
+            <!-- Columna 3: Contacto -->
+            <div class="space-y-4">
+                <h4 class="font-serif text-lg text-brand-gold">Oficina Central</h4>
+                <div class="space-y-3 text-xs text-brand-ivory/70">
+                    <p><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i> Culiacán, Sinaloa, México</p>
+                    <p><i class="fa-solid fa-phone text-brand-gold mr-2"></i> (667) 152 09 88</p>
+                    <p><i class="fa-solid fa-phone text-brand-gold mr-2"></i> (667) 161 02 34</p>
+                    <p><i class="fa-solid fa-envelope text-brand-gold mr-2"></i> gerencia@cesartamayo.com</p>
+                </div>
+            </div>
+
+            <!-- Columna 4: Boletín Premium -->
+            <div class="space-y-4">
+                <h4 class="font-serif text-lg text-brand-gold">Portafolio Privado</h4>
+                <p class="text-brand-ivory/60 text-xs font-light leading-relaxed">
+                    Inscríbete para recibir antes que nadie alertas de preventas de terrenos o nuevos departamentos
+                    premium.
+                </p>
+                <div class="flex">
+                    <input type="email" placeholder="Tu correo electrónico"
+                        class="w-full bg-brand-red/30 border border-brand-gold/30 text-xs py-3 px-4 focus:outline-none focus:border-brand-gold text-brand-ivory placeholder:text-brand-ivory/40">
+                    <button
+                        class="bg-brand-gold text-brand-red text-xs font-bold uppercase tracking-wider px-4 hover:bg-brand-ivory hover:text-brand-red transition-colors"><i
+                            class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-[10px] text-brand-ivory/40 space-y-4 md:space-y-0">
+            <p>Copyright © 2026 cesartamayo.com Bienes Raices. Todos los derechos reservados.</p>
+            <p class="text-center md:text-right max-w-md">
+                Todas las medidas enunciadas son orientativas y las exactas se expresarán en el título de propiedad. Las
+                fotos son meramente ilustrativas.
+            </p>
+        </div>
+    </footer>
+
+    <!-- PANEL DE FAVORITOS (DESLIZABLE) -->
+    <div id="favoritos-panel"
+        class="fixed top-0 right-0 h-full w-full max-w-md bg-brand-ivory shadow-2xl border-l border-brand-gold/20 transform translate-x-full transition-transform duration-500 ease-in-out z-50 flex flex-col">
+        <div class="p-6 border-b border-brand-gold/10 flex justify-between items-center bg-brand-red text-brand-ivory">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-heart text-brand-gold"></i>
+                <h3 class="font-serif text-lg uppercase tracking-wider">Mis Favoritos</h3>
+            </div>
+            <button onclick="toggleFavoritosPanel()"
+                class="text-brand-ivory hover:text-brand-gold transition-colors text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="favoritos-lista" class="flex-1 overflow-y-auto p-6 space-y-4 no-scrollbar">
+            <!-- Favoritos inyectados -->
+        </div>
+
+        <div class="p-6 border-t border-brand-gold/10 bg-stone-50">
+            <a href="https://wa.me/526671520988?text=Hola,%20quisiera%20solicitar%20información%20sobre%20mis%20propiedades%20guardadas%20como%20favoritas."
+                target="_blank"
+                class="w-full bg-brand-red text-brand-ivory text-xs font-bold uppercase tracking-widest py-4 rounded-sm hover:bg-brand-gold hover:text-brand-red transition-colors inline-block text-center shadow-md">
+                Consultar Mis Favoritos por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- MODAL DETALLE DE PROPIEDAD -->
+    <div id="detalle-modal"
+        class="fixed inset-0 bg-brand-charcoal/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div
+            class="bg-brand-ivory max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-sm shadow-2xl relative flex flex-col md:flex-row no-scrollbar">
+            <!-- Botón Cerrar -->
+            <button onclick="cerrarDetalle()"
+                class="absolute top-4 right-4 z-50 bg-brand-ivory text-brand-red hover:text-brand-gold border border-brand-gold/20 h-10 w-10 rounded-full flex items-center justify-center transition-colors">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Izquierda: Media de la propiedad -->
+            <div class="w-full md:w-1/2 bg-stone-100 relative h-64 md:h-auto min-h-[300px]">
+                <img id="modal-img" src="" alt="Propiedad" class="w-full h-full object-cover">
+                <span id="modal-badge-op"
+                    class="absolute top-6 left-6 bg-brand-red text-brand-ivory text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-sm"></span>
+            </div>
+
+            <!-- Derecha: Datos Técnicos y Ficha Editorial -->
+            <div class="w-full md:w-1/2 p-8 md:p-10 space-y-6">
+                <div>
+                    <span id="modal-tipo"
+                        class="text-[10px] uppercase tracking-widest text-brand-gold font-bold mb-1.5 block"></span>
+                    <h3 id="modal-titulo" class="font-serif text-2xl md:text-3xl text-brand-red leading-tight"></h3>
+                    <p id="modal-ubicacion" class="text-xs text-stone-500 font-light mt-2"><i
+                            class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i></p>
+                </div>
+
+                <div id="modal-precio"
+                    class="text-2xl font-serif text-brand-gold font-bold border-y border-brand-gold/20 py-4"></div>
+
+                <!-- Detalles Técnicos -->
+                <div class="grid grid-cols-3 gap-4 py-2 text-center bg-stone-50 p-4 border border-brand-gold/10">
+                    <div>
+                        <span class="block text-[9px] uppercase tracking-widest text-stone-400">Recámaras</span>
+                        <span id="modal-recamaras" class="font-bold text-brand-red text-sm"></span>
+                    </div>
+                    <div>
+                        <span class="block text-[9px] uppercase tracking-widest text-stone-400">Baños</span>
+                        <span id="modal-banos" class="font-bold text-brand-red text-sm"></span>
+                    </div>
+                    <div>
+                        <span class="block text-[9px] uppercase tracking-widest text-stone-400">Superficie</span>
+                        <span id="modal-superficie" class="font-bold text-brand-red text-sm"></span>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-brand-red">Detalles Generales</h4>
+                    <p id="modal-descripcion" class="text-stone-500 text-xs font-light leading-relaxed"></p>
+                </div>
+
+                <!-- Botones Acción -->
+                <div class="pt-4 flex items-center space-x-4">
+                    <button id="modal-btn-whatsapp"
+                        class="flex-1 bg-brand-red text-brand-ivory text-xs font-bold uppercase tracking-wider py-4 text-center rounded-sm hover:bg-brand-gold hover:text-brand-red transition-colors">
+                        <i class="fa-brands fa-whatsapp mr-1.5"></i> Consultar Ficha Técnica
+                    </button>
+                    <button id="modal-btn-favorito"
+                        class="border border-brand-gold/40 text-brand-gold hover:bg-brand-gold hover:text-brand-red p-4 rounded-sm transition-colors">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WIDGET PREMIUM CONCIERGE WHATSAPP FLOTANTE -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <!-- Botón flotante -->
+        <button onclick="toggleConcierge()"
+            class="bg-brand-red hover:bg-brand-gold text-brand-ivory hover:text-brand-red p-4 rounded-full shadow-2xl flex items-center justify-center w-14 h-14 transition-all duration-300 group border border-brand-gold/20 animate-pulse">
+            <i class="fa-brands fa-whatsapp text-2xl group-hover:scale-110 transition-transform"></i>
+        </button>
+
+        <!-- Ventana Concierge -->
+        <div id="concierge-window"
+            class="absolute bottom-16 right-0 w-80 bg-brand-ivory border border-brand-gold/30 rounded-sm shadow-2xl hidden flex-col overflow-hidden">
+            <!-- Header Concierge -->
+            <div class="bg-brand-red p-4 text-brand-ivory border-b border-brand-gold/20 flex items-center space-x-3">
+                <div
+                    class="bg-brand-gold text-brand-red h-10 w-10 rounded-full flex items-center justify-center font-serif text-sm font-bold">
+                    CT
+                </div>
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider">Concierge Premium</h4>
+                    <span class="text-[9px] text-brand-gold font-light">Asesoría de César Tamayo</span>
+                </div>
+            </div>
+            <!-- Contenido Concierge -->
+            <div class="p-6 space-y-4">
+                <p class="text-stone-500 text-xs font-light leading-relaxed">
+                    Hola. Con mucho gusto puedo resolver tus dudas sobre desarrollos exclusivos en preventa o coordinar
+                    una visita privada de inmediato.
+                </p>
+                <div class="space-y-2">
+                    <a href="https://wa.me/526671520988?text=Hola,%20quisiera%20solicitar%20asesoría%20sobre%20Casas%20y%20Departamentos."
+                        target="_blank"
+                        class="block w-full bg-stone-50 hover:bg-brand-red/5 text-brand-red text-left p-3 border border-stone-200 hover:border-brand-gold transition-colors text-xs rounded-sm">
+                        🏡 Buscar Casas o Departamentos
+                    </a>
+                    <a href="https://wa.me/526671520988?text=Hola,%20estoy%20buscando%20un%20Terreno%20o%20Lote%20Premium."
+                        target="_blank"
+                        class="block w-full bg-stone-50 hover:bg-brand-red/5 text-brand-red text-left p-3 border border-stone-200 hover:border-brand-gold transition-colors text-xs rounded-sm">
+                        🌳 Lotes o Terrenos en Preventa
+                    </a>
+                    <a href="https://wa.me/526671520988?text=Hola,%20requiero%20asesoría%20para%20un%20proyecto%20Comercial/Industrial."
+                        target="_blank"
+                        class="block w-full bg-stone-50 hover:bg-brand-red/5 text-brand-red text-left p-3 border border-stone-200 hover:border-brand-gold transition-colors text-xs rounded-sm">
+                        🏢 Locales o Bodegas Industriales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DATOS DE PROPIEDADES EN SCRIPT -->
+    <script>
+        // Catálogo completo estructurado desde los datos del usuario
+        const propiedadesDataset = [
+            {
+                id: 1,
+                title: "Residencia Premium Chapultepec",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Colonia Chapultepec, Culiacán, Sinaloa",
+                price: 12500000,
+                bedrooms: 5,
+                bathrooms: 4,
+                area: 538,
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+                description: "Casa con excelente ubicación y amplias áreas verdes en el corazón residencial de Culiacán. Perfecta para albergar familias numerosas buscando absoluta seguridad.",
+                development: ""
+            },
+            {
+                id: 2,
+                title: "Departamento RENTA Guadalupe Victoria",
+                operation: "Renta",
+                type: "Departamento",
+                city: "Culiacán",
+                location: "Colonia Guadalupe Victoria, Culiacán, Sinaloa",
+                price: 7000,
+                bedrooms: 1,
+                bathrooms: 1,
+                area: 79,
+                image: "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&q=80&w=800",
+                description: "Excelente departamento funcional y acogedor, listo para habitar. Magnífica conectividad con centros comerciales y vialidades primarias.",
+                development: ""
+            },
+            {
+                id: 3,
+                title: "Nueva Bodega Parque Industrial Sin Asignación",
+                operation: "Renta",
+                type: "Bodega",
+                city: "Culiacán",
+                location: "Parque Industrial Sin Asignación, Culiacán Rosales",
+                price: 73000,
+                bedrooms: 0,
+                bathrooms: 0,
+                area: 1450,
+                image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+                description: "Bodega logística de alto rendimiento con piso reforzado, gran patio de maniobras y techumbre aislante. Lista para empresas distribuidoras.",
+                development: ""
+            },
+            {
+                id: 4,
+                title: "Predio Comercial Monclova Centro",
+                operation: "Venta",
+                type: "Terreno",
+                city: "Monclova",
+                location: "Colonia Centro, Monclova, Coahuila",
+                price: 5217414,
+                bedrooms: 0,
+                bathrooms: 0,
+                area: 1080,
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800",
+                description: "Excelente predio comercial de gran extensión en esquina. Ideal para el desarrollo de proyectos de uso mixto o tiendas de conveniencia.",
+                development: ""
+            },
+            {
+                id: 5,
+                title: "Predio Olmecas en Venta",
+                operation: "Venta",
+                type: "Terreno",
+                city: "Coatzacoalcos",
+                location: "Fracc. Cd. Olmeca Coatzacoalcos, Veracruz",
+                price: 19244100,
+                bedrooms: 0,
+                bathrooms: 0,
+                area: 1790,
+                image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=800",
+                description: "Espectacular lote comercial estratégico en esquina, alta afluencia vehicular ideal para desarrollo de plazas de retail.",
+                development: ""
+            },
+            {
+                id: 6,
+                title: "Predio En Ciudad Obregón Lote 1",
+                operation: "Venta",
+                type: "Terreno",
+                city: "Obregón",
+                location: "Fracc. Los Angeles II Obregón, Sonora",
+                price: 7549750,
+                bedrooms: 0,
+                bathrooms: 0,
+                area: 2500,
+                image: "https://images.unsplash.com/photo-1524813686514-a57563d77d61?auto=format&fit=crop&q=80&w=800",
+                description: "Macrolote idóneo para bodegas comerciales o complejo residencial de escala media.",
+                development: ""
+            },
+            {
+                id: 7,
+                title: "Local Oblatos en Venta",
+                operation: "Venta",
+                type: "Local",
+                city: "Guadalajara",
+                location: "Colonia Lomas de Oblatos, Guadalajara, Jalisco",
+                price: 11385000,
+                bedrooms: 0,
+                bathrooms: 2,
+                area: 258,
+                image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800",
+                description: "Excelente local comercial de gran exposición visual en la transitada zona de Lomas de Oblatos. Ideal para sucursal bancaria u oficinas corporativas.",
+                development: ""
+            },
+            {
+                id: 8,
+                title: "Casita Andrade Centro",
+                operation: "Venta",
+                type: "Local",
+                city: "Culiacán",
+                location: "Colonia Centro, Culiacán, Sinaloa",
+                price: 1800000,
+                bedrooms: 2,
+                bathrooms: 1,
+                area: 110,
+                image: "https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&q=80&w=800",
+                description: "Casita con uso comercial o residencial con excelente potencial para oficinas o consultorios médicos.",
+                development: ""
+            },
+            {
+                id: 9,
+                title: "Edificio Winia Polanco",
+                operation: "Venta",
+                type: "Edificio",
+                city: "CDMX",
+                location: "Lope de Vega, Polanco V Sección, Delegación Miguel Hidalgo, CDMX",
+                price: 270000000,
+                bedrooms: 0,
+                bathrooms: 10,
+                area: 720,
+                image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
+                description: "Exclusiva torre corporativa en una de las mejores vialidades corporativas de Polanco. Ideal para sede de corporativos AAA.",
+                development: ""
+            },
+            {
+                id: 10,
+                title: "Excelente Departamento Ceiba Residencial",
+                operation: "Venta",
+                type: "Departamento",
+                city: "Culiacán",
+                location: "Congreso del Estado, Culiacán, Sinaloa",
+                price: 5500000,
+                bedrooms: 2,
+                bathrooms: 2,
+                area: 120,
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+                description: "Departamento exclusivo con acabados premium y acceso privado directo al centro comercial Ceiba. El mejor estilo urbano residencial.",
+                development: "Ceiba"
+            },
+            {
+                id: 11,
+                title: "Casa Chapultepec Una Planta",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Colonia Chapultepec, Culiacán, Sinaloa",
+                price: 18500000,
+                bedrooms: 5,
+                bathrooms: 4,
+                area: 1005,
+                image: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&q=80&w=800",
+                description: "Soberbia residencia de una sola planta sobre espectacular terreno de más de 1,000 m². Ubicación residencial inmejorable.",
+                development: ""
+            },
+            {
+                id: 12,
+                title: "Excelente Local Obregón para Escuela u Oficinas",
+                operation: "Renta",
+                type: "Local",
+                city: "Culiacán",
+                location: "Av. Álvaro Obregón, Col. Buenos Aires",
+                price: 28000,
+                bedrooms: 0,
+                bathrooms: 7,
+                area: 700,
+                image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+                description: "Gran local habilitado con múltiples salones, oficinas y sanitarios para alto flujo. Ubicación comercial inmejorable sobre Obregón.",
+                development: ""
+            },
+            {
+                id: 13,
+                title: "Departamento Serena Mazatlán",
+                operation: "Venta",
+                type: "Departamento",
+                city: "Mazatlán",
+                location: "Residencial Serena, Mazatlán, Sinaloa",
+                price: 8500000,
+                bedrooms: 3,
+                bathrooms: 2,
+                area: 165,
+                image: "https://images.unsplash.com/photo-1512915922686-57c11dde9b6b?auto=format&fit=crop&q=80&w=800",
+                description: "Exclusivo departamento amueblado de alta gama dentro de uno de los residenciales cerrados con mayor prestigio turístico.",
+                development: "Serena"
+            },
+            {
+                id: 14,
+                title: "Residencia Bugambilia Nativa",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Nativa Jardín Residencial, Culiacán, Sinaloa",
+                price: 6900000,
+                bedrooms: 2,
+                bathrooms: 3,
+                area: 290,
+                image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
+                description: "Elegante residencia modelo Bugambilia con amplios jardines privados y acabados en maderas finas y mármol dentro de Nativa.",
+                development: "Nativa"
+            },
+            {
+                id: 15,
+                title: "Residencia Amapa Nativa",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Nativa Jardín Residencial, Culiacán, Sinaloa",
+                price: 7850000,
+                bedrooms: 3,
+                bathrooms: 3,
+                area: 223,
+                image: "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=800",
+                description: "Sofisticada casa modelo Amapa de diseño contemporáneo y techos de doble altura. Perfecta integración natural.",
+                development: "Nativa"
+            },
+            {
+                id: 16,
+                title: "Torre Zafiro Condominio",
+                operation: "Venta",
+                type: "Departamento",
+                city: "Mazatlán",
+                location: "Torre Zafiro, Mazatlán, Sinaloa",
+                price: 3600000,
+                bedrooms: 2,
+                bathrooms: 2,
+                area: 83,
+                image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+                description: "Precioso condominio con vista a la marina y amenidades de lujo. Excelente oportunidad de inversión en Mazatlán.",
+                development: "Zafiro"
+            },
+            {
+                id: 17,
+                title: "Hermosa Residencia Rio Sinaloa",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Colonia Guadalupe, Culiacán, Sinaloa",
+                price: 15000000,
+                bedrooms: 4,
+                bathrooms: 4,
+                area: 1088,
+                image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+                description: "Mansión de estilo clásico-renovado con imponente presencia urbana, alberca privada y amplias estancias familiares.",
+                development: ""
+            },
+            {
+                id: 18,
+                title: "Casa Barcelona Espacios",
+                operation: "Renta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Fracc. Espacios Barcelona, Culiacán, Sinaloa",
+                price: 15000,
+                bedrooms: 3,
+                bathrooms: 3,
+                area: 147,
+                image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+                description: "Impecable casa en renta en privada segura con alberca común y vigilancia 24/7. Excelente mantenimiento.",
+                development: ""
+            },
+            {
+                id: 19,
+                title: "Casa La Primavera Barrio San Agustín",
+                operation: "Venta",
+                type: "Casa",
+                city: "Culiacán",
+                location: "Barrio San Agustín, La Primavera, Culiacán, Sinaloa",
+                price: 7300000,
+                bedrooms: 3,
+                bathrooms: 3,
+                area: 182,
+                image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=800",
+                description: "Preciosa residencia contemporánea ubicada en el desarrollo de mayor prestigio y plusvalía en Culiacán. Amenidades lacustres.",
+                development: "La Primavera"
+            }
+        ];
+
+        // Estado de la aplicación
+        let favoritos = JSON.parse(localStorage.getItem('tamayo_favs')) || [];
+        let operacionSeleccionada = 'all';
+
+        // Al iniciar
+        window.onload = function () {
+            ejecutarFiltro();
+            actualizarFavoritosUI();
+            iniciarHeroRotation();
+        }
+
+        // Rotación de fondos del Hero para dinamismo de lujo
+        const heroImages = [
+            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1920",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1920",
+            "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1920"
+        ];
+        let currentHeroIdx = 0;
+        function iniciarHeroRotation() {
+            setInterval(() => {
+                currentHeroIdx = (currentHeroIdx + 1) % heroImages.length;
+                const imgEl = document.getElementById('hero-bg');
+                if (imgEl) {
+                    imgEl.style.opacity = 0;
+                    setTimeout(() => {
+                        imgEl.src = heroImages[currentHeroIdx];
+                        imgEl.style.opacity = 1;
+                    }, 500);
+                }
+            }, 8000);
+        }
+
+        // Seteo rápido de operación (Renta/Venta)
+        function setOperacion(op) {
+            operacionSeleccionada = op;
+            // Estilos de botones
+            const btnAll = document.getElementById('op-all');
+            const btnVenta = document.getElementById('op-venta');
+            const btnRenta = document.getElementById('op-renta');
+
+            [btnAll, btnVenta, btnRenta].forEach(btn => {
+                btn.className = "px-5 py-2 text-xs font-semibold uppercase tracking-wider text-brand-charcoal/60 hover:text-brand-red transition-all";
+            });
+
+            if (op === 'all') {
+                btnAll.className = "px-5 py-2 text-xs font-bold uppercase tracking-wider border-b-2 border-brand-red text-brand-red transition-all";
+            } else if (op === 'Venta') {
+                btnVenta.className = "px-5 py-2 text-xs font-bold uppercase tracking-wider border-b-2 border-brand-red text-brand-red transition-all";
+            } else if (op === 'Renta') {
+                btnRenta.className = "px-5 py-2 text-xs font-bold uppercase tracking-wider border-b-2 border-brand-red text-brand-red transition-all";
+            }
+
+            ejecutarFiltro();
+        }
+
+        // Actualizar visualización del precio
+        function actualizarSliderDisplay() {
+            const val = document.getElementById('filtro-precio').value;
+            const formatted = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(val);
+            document.getElementById('rango-precio-display').innerText = `$1,000 — ${formatted} MXN`;
+        }
+
+        // Filtrar directamente por un desarrollo al dar clic
+        function filtrarPorDesarrollo(desarrolloNombre) {
+            document.getElementById('filtro-tipo').value = 'all';
+            document.getElementById('filtro-ubicacion').value = 'all';
+            document.getElementById('filtro-recamaras').value = 'all';
+
+            const filtradas = propiedadesDataset.filter(p =>
+                p.development.toLowerCase().includes(desarrolloNombre.toLowerCase()) ||
+                p.title.toLowerCase().includes(desarrolloNombre.toLowerCase())
+            );
+
+            document.getElementById('catalogo-titulo').innerText = `Desarrollo: ${desarrolloNombre}`;
+            renderPropiedades(filtradas);
+            document.getElementById('grid-propiedades').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Limpiar todos los campos del buscador
+        function limpiarFiltros() {
+            document.getElementById('filtro-ubicacion').value = 'all';
+            document.getElementById('filtro-tipo').value = 'all';
+            document.getElementById('filtro-recamaras').value = 'all';
+            document.getElementById('filtro-orden').value = 'recent';
+            document.getElementById('filtro-precio').value = 270000000;
+            operacionSeleccionada = 'all';
+
+            // Restablecer estilos
+            setOperacion('all');
+            actualizarSliderDisplay();
+
+            document.getElementById('catalogo-titulo').innerText = `Propiedades Seleccionadas`;
+            ejecutarFiltro();
+        }
+
+        // Filtro Maestro
+        function ejecutarFiltro() {
+            const ubicacionVal = document.getElementById('filtro-ubicacion').value;
+            const tipoVal = document.getElementById('filtro-tipo').value;
+            const recamarasVal = document.getElementById('filtro-recamaras').value;
+            const precioMax = parseInt(document.getElementById('filtro-precio').value);
+            const ordenVal = document.getElementById('filtro-orden').value;
+
+            let filtradas = propiedadesDataset.filter(prop => {
+                // Filtro Operación
+                if (operacionSeleccionada !== 'all' && prop.operation !== operacionSeleccionada) {
+                    return false;
+                }
+                // Filtro Ubicación
+                if (ubicacionVal !== 'all' && prop.city !== ubicacionVal) {
+                    return false;
+                }
+                // Filtro Tipo
+                if (tipoVal !== 'all' && prop.type !== tipoVal) {
+                    return false;
+                }
+                // Filtro Recámaras
+                if (recamarasVal !== 'all') {
+                    const req = parseInt(recamarasVal);
+                    if (req === 5 && prop.bedrooms < 5) return false;
+                    if (req < 5 && prop.bedrooms !== req) return false;
+                }
+                // Filtro Precio
+                if (prop.price > precioMax) {
+                    return false;
+                }
+                return true;
+            });
+
+            // Ordenamiento
+            if (ordenVal === 'price-asc') {
+                filtradas.sort((a, b) => a.price - b.price);
+            } else if (ordenVal === 'price-desc') {
+                filtradas.sort((a, b) => b.price - a.price);
+            }
+
+            renderPropiedades(filtradas);
+        }
+
+        // Renderizar propiedades filtradas en la rejilla
+        function renderPropiedades(lista) {
+            const grid = document.getElementById('grid-propiedades');
+            const placeholder = document.getElementById('sin-resultados');
+            const foundCount = document.getElementById('propiedades-encontradas');
+
+            foundCount.innerText = `${lista.length} ${lista.length === 1 ? 'propiedad encontrada' : 'propiedades encontradas'}`;
+
+            if (lista.length === 0) {
+                grid.innerHTML = '';
+                placeholder.classList.remove('hidden');
+                return;
+            }
+
+            placeholder.classList.add('hidden');
+            grid.innerHTML = '';
+
+            lista.forEach((prop, index) => {
+                const formattedPrice = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(prop.price);
+                const isFav = favoritos.includes(prop.id);
+                const heartClass = isFav ? 'fa-solid text-red-500' : 'fa-regular text-brand-red';
+
+                // Creación de la tarjeta con estilo asimétrico alternado sutilmente
+                const card = document.createElement('div');
+                card.className = "bg-brand-ivory border border-brand-gold/10 hover:border-brand-gold hover:shadow-xl transition-all duration-300 relative group flex flex-col justify-between";
+
+                card.innerHTML = `
+                    <div>
+                        <!-- Imagen & Badge -->
+                        <div class="relative overflow-hidden aspect-[4/3] bg-stone-100">
+                            <img src="${prop.image}" alt="${prop.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <span class="absolute top-4 left-4 bg-brand-red text-brand-ivory text-[9px] font-bold tracking-widest uppercase px-3 py-1 rounded-sm">
+                                ${prop.operation}
+                            </span>
+                            <button onclick="event.stopPropagation(); toggleFavorito(${prop.id})" class="absolute top-4 right-4 bg-brand-ivory hover:bg-brand-gold/20 h-8 w-8 rounded-full flex items-center justify-center shadow-md transition-colors">
+                                <i class="${heartClass} fa-heart text-sm"></i>
+                            </button>
+                        </div>
+
+                        <!-- Info -->
+                        <div class="p-6">
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="text-[9px] uppercase tracking-widest text-brand-gold font-bold">${prop.type}</span>
+                                <span class="text-xs text-stone-500"><i class="fa-solid fa-location-dot text-brand-gold/80 mr-1"></i> ${prop.city}</span>
+                            </div>
+                            <h3 class="font-serif text-lg text-brand-red group-hover:text-brand-gold transition-colors line-clamp-1 cursor-pointer" onclick="abrirDetalle(${prop.id})">
+                                ${prop.title}
+                            </h3>
+                            <p class="text-xs text-stone-500 font-light mt-2 line-clamp-2">${prop.description}</p>
+                        </div>
+                    </div>
+
+                    <!-- Ficha Técnica Pie -->
+                    <div class="px-6 pb-6 pt-2">
+                        <!-- Detalles Técnicos -->
+                        <div class="flex items-center space-x-4 text-[11px] text-stone-500 border-t border-stone-100 pt-4 mb-4">
+                            ${prop.bedrooms > 0 ? `<span><i class="fa-solid fa-bed text-brand-gold mr-1"></i> ${prop.bedrooms} Rec.</span>` : ''}
+                            ${prop.bathrooms > 0 ? `<span><i class="fa-solid fa-bath text-brand-gold mr-1"></i> ${prop.bathrooms} Baños</span>` : ''}
+                            ${prop.area > 0 ? `<span><i class="fa-solid fa-maximize text-brand-gold mr-1"></i> ${prop.area} m²</span>` : ''}
+                        </div>
+
+                        <div class="flex justify-between items-center">
+                            <span class="font-serif text-base text-brand-charcoal font-bold">${formattedPrice} ${prop.operation === 'Renta' ? '/ mes' : ''}</span>
+                            <button onclick="abrirDetalle(${prop.id})" class="text-brand-red hover:text-brand-gold font-bold text-[10px] uppercase tracking-widest transition-colors">
+                                Ver Ficha <i class="fa-solid fa-arrow-right-long ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Favoritos Toggle
+        function toggleFavorito(id) {
+            if (favoritos.includes(id)) {
+                favoritos = favoritos.filter(favId => favId !== id);
+            } else {
+                favoritos.push(id);
+            }
+            localStorage.setItem('tamayo_favs', JSON.stringify(favoritos));
+            actualizarFavoritosUI();
+            ejecutarFiltro();
+        }
+
+        // UI Favoritos
+        function actualizarFavoritosUI() {
+            document.getElementById('fav-count').innerText = favoritos.length;
+            const listaContainer = document.getElementById('favoritos-lista');
+
+            if (favoritos.length === 0) {
+                listaContainer.innerHTML = `
+                    <div class="text-center py-12 text-stone-400">
+                        <i class="fa-regular fa-heart text-3xl mb-3"></i>
+                        <p class="text-xs font-light">No tienes propiedades guardadas aún.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            listaContainer.innerHTML = '';
+            favoritos.forEach(favId => {
+                const prop = propiedadesDataset.find(p => p.id === favId);
+                if (prop) {
+                    const formattedPrice = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(prop.price);
+                    const item = document.createElement('div');
+                    item.className = "flex items-center space-x-4 bg-stone-50 p-3 border border-brand-gold/10 rounded-sm relative group";
+                    item.innerHTML = `
+                        <img src="${prop.image}" alt="${prop.title}" class="w-16 h-16 object-cover rounded-sm">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="text-xs font-bold text-brand-red truncate">${prop.title}</h4>
+                            <p class="text-[10px] text-stone-500">${prop.city} • ${prop.type}</p>
+                            <span class="text-xs font-bold text-brand-gold">${formattedPrice}</span>
+                        </div>
+                        <button onclick="toggleFavorito(${prop.id})" class="text-stone-400 hover:text-red-500 transition-colors p-1">
+                            <i class="fa-solid fa-trash-can text-xs"></i>
+                        </button>
+                    `;
+                    listaContainer.appendChild(item);
+                }
+            });
+        }
+
+        // Toggle Favoritos deslizante
+        function toggleFavoritosPanel() {
+            const panel = document.getElementById('favoritos-panel');
+            panel.classList.toggle('translate-x-full');
+        }
+
+        // Modal Detalle
+        function abrirDetalle(id) {
+            const prop = propiedadesDataset.find(p => p.id === id);
+            if (!prop) return;
+
+            document.getElementById('modal-img').src = prop.image;
+            document.getElementById('modal-badge-op').innerText = prop.operation;
+            document.getElementById('modal-tipo').innerText = prop.type;
+            document.getElementById('modal-titulo').innerText = prop.title;
+            document.getElementById('modal-ubicacion').innerHTML = `<i class="fa-solid fa-location-dot text-brand-gold mr-1.5"></i>${prop.location}`;
+
+            const formattedPrice = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 }).format(prop.price);
+            document.getElementById('modal-precio').innerText = `${formattedPrice} MXN ${prop.operation === 'Renta' ? '/ mes' : ''}`;
+
+            document.getElementById('modal-recamaras').innerText = prop.bedrooms > 0 ? `${prop.bedrooms} Rec.` : 'N/A';
+            document.getElementById('modal-banos').innerText = prop.bathrooms > 0 ? `${prop.bathrooms} Baños` : 'N/A';
+            document.getElementById('modal-superficie').innerText = prop.area > 0 ? `${prop.area} m²` : 'N/A';
+            document.getElementById('modal-descripcion').innerText = prop.description;
+
+            // Configurar WhatsApp personalizado para esta propiedad
+            const msg = encodeURIComponent(`Hola Cesar Tamayo Real Estate, me interesa recibir más detalles de la propiedad: "${prop.title}" en ${prop.city} con valor de ${formattedPrice}.`);
+            document.getElementById('modal-btn-whatsapp').onclick = function () {
+                window.open(`https://wa.me/526671520988?text=${msg}`, '_blank');
+            };
+
+            // Corazón favorito dentro del modal
+            const isFav = favoritos.includes(prop.id);
+            const btnFav = document.getElementById('modal-btn-favorito');
+            btnFav.innerHTML = isFav ? `<i class="fa-solid fa-heart text-red-500 text-lg"></i>` : `<i class="fa-regular fa-heart text-lg"></i>`;
+            btnFav.onclick = function () {
+                toggleFavorito(prop.id);
+                const updatedFav = favoritos.includes(prop.id);
+                btnFav.innerHTML = updatedFav ? `<i class="fa-solid fa-heart text-red-500 text-lg"></i>` : `<i class="fa-regular fa-heart text-lg"></i>`;
+            };
+
+            document.getElementById('detalle-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+        }
+
+        function cerrarDetalle() {
+            document.getElementById('detalle-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Toggle Concierge flotante
+        function toggleConcierge() {
+            const el = document.getElementById('concierge-window');
+            el.classList.toggle('hidden');
+        }
+
+        // Toggle menú móvil
+        function toggleMobileMenu() {
+            const el = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            el.classList.toggle('hidden');
+            if (el.classList.contains('hidden')) {
+                icon.className = "fa-solid fa-bars text-xl";
+            } else {
+                icon.className = "fa-solid fa-xmark text-xl";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cesar Tamayo Real Estate | Exclusividad & Desarrollos</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@200..800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome para Iconografía Premium -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#5C0612',       // Rojo profundo/Borgoña de lujo
+                            redLight: '#7A101C',  // Rojo más claro para hovers y acentos activos
+                            gold: '#C5A880',      // Oro mate / Champán
+                            goldDark: '#A3855E',
+                            ivory: '#FAF9F6',     // Fondo blanco cálido / Alabastro
+                            charcoal: '#1C2321',  // Texto oscuro elegante
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Desplazamiento suave general */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ocultar barra de scroll para carruseles pero mantener funcionalidad */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-brand-ivory text-brand-charcoal font-sans antialiased selection:bg-brand-gold/30 selection:text-brand-red">
+
+    <!-- BARRA SUPERIOR DE CONTACTO PREMIUM -->
+    <div
+        class="bg-brand-red text-brand-ivory text-xs py-2 px-6 flex justify-between items-center border-b border-brand-gold/20">
+        <div class="flex items-center space-x-6">
+            <span><i class="fa-solid fa-location-dot text-brand-gold mr-2"></i>Culiacán, Sinaloa, México</span>
+            <span class="hidden md:inline"><i
+                    class="fa-solid fa-envelope text-brand-gold mr-2"></i>gerencia@cesartamayo.com</span>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="tel:6671520988" class="hover:text-brand-gold transition-colors duration-300"><i
+                    class="fa-solid fa-phone text-brand-gold mr-1"></i> (667) 152 09 88</a>
+            <span class="text-brand-gold/40">|</span>
+            <div class="flex items-center space-x-3">
+                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO DE NAVEGACIÓN -->
+    <header
+        class="sticky top-0 z-40 bg-brand-ivory/90 backdrop-blur-md border-b border-brand-gold/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <!-- Logotipo Editorial -->
+            <a href="#" class="flex flex-col">
+                <span class="font-serif text-xl tracking-widest text-brand-red font-bold uppercase">Cesar Tamayo</span>
+                <span class="text-[9px] tracking-[0.25em] text-brand-gold font-semibold uppercase -mt-1">Real
+                    Estate</span>
+            </a>
+
+            <!-- Menú Principal -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
+                <a href="#inicio" class="text-brand-red border-b-2 border-brand-gold pb-1 transition-colors">Inicio</a>
+                <a href="#buscador-seccion" class="hover:text-brand-gold transition-colors">Propiedades</a>
+                <!-- Dropdown desarrollos -->
+                <div class="relative group">
+                    <button class="hover:text-brand-gold transition-colors flex items-center space-x-1">
+                        <span>Desarrollos</span>
+                        <i class="fa-solid fa-chevron-down text-[10px] text-brand-gold"></i>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 mt-2 w-56 bg-brand-ivory border border-brand-gold/20 shadow-xl rounded-sm opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <div class="py-2">
+                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Almarena')"
+                                class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Almarena</a>
+                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Acacia')"
+                                class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Acacia</a>
+                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Paralela')"
+                                class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Paralela</a>
+                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Montemar')"
+                                class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Montemar
+                                Luxury Living</a>
+                            <a href="#desarrollos" onclick="filtrarPorDesarrollo('Nativa')"
+                                class="block px-4 py-2 hover:bg-brand-red/5 text-brand-charcoal hover:text-brand-red transition-colors text-xs">Nativa
+                                Jardín Residencial</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#servicios" class="hover:text-brand-gold transition-colors font-medium">Servicios</a>
+                <a href="#nosotros" class="hover:text-brand-gold transition-colors font-medium">Quienes Somos</a>
+                <a href="#codigo-etica" class="hover:text-brand-gold transition-colors font-medium">Código de Ética</a>
+            </nav>
+
+            <!-- Acciones Premium -->
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="toggleFavoritosPanel()"
+                    class="relative p-2 text-brand-red hover:text-brand-gold transition-colors">
+                    <i class="fa-regular fa-heart text-lg"></i>
+                    <span id="fav-count"
+                        class="absolute top-0 right-0 bg-brand-gold text-brand-red text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center border border-brand-ivory">0</span>
+                </button>
+                <a href="https://wa.me/526671520988?text=Hola,%20quisiera%20solicitar%20asesoría%20personalizada%20con%20un%20experto."
+                    target="_blank"
+                    class="border border-brand-red bg-brand-red text-brand-ivory px-5 py-2.5 text-xs font-semibold uppercase tracking-wider hover:bg-brand-gold hover:border-brand-gold hover:text-brand-red transition-all duration-300 rounded-sm">
+                    Asesoría Privada
+                </a>
+            </div>
+
+            <!-- Hamburguesa Móvil -->
+            <button onclick="toggleMobileMenu()"
+                class="lg:hidden p-2 text-brand-red hover:text-brand-gold transition-colors">
+                <i id="menu-icon" class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-brand-ivory border-t border-brand-gold/10 px-6 py-4 space-y-4 shadow-lg absolute w-full left-0 z-40">
+            <a href="#inicio" onclick="toggleMobileMenu()" class="block text-brand-red font-semibold">Inicio</a>
+            <a href="#buscador-seccion" onclick="toggleMobileMenu()"
+                class="block text-brand-charcoal hover:text-brand-gold">Propiedades</a>
+            <div class="py-2 border-y border-brand-gold/10">
+                <span
+                    class="block text-[11px] font-bold uppercase tracking-wider text-brand-gold mb-2">Desarrollos</span>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Almarena'); toggleMobileMenu()"
+                        class="text-brand-charcoal">Almarena</a>
+                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Acacia'); toggleMobileMenu()"
+                        class="text-brand-charcoal">Acacia</a>
+                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Paralela'); toggleMobileMenu()"
+                        class="text-brand-charcoal">Paralela</a>
+                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Montemar'); toggleMobileMenu()"
+                        class="text-brand-charcoal">Montemar Luxury</a>
+                    <a href="#desarrollos" onclick="filtrarPorDesarrollo('Nativa'); toggleMobileMenu()"
+                        class="text-brand-charcoal col-span-2">Nativa Jardín</a>
+                </div>
+            </div>
+            <a href="#servicios" onclick="toggleMobileMenu()"
+                class="block text-brand-charcoal hover:text-brand-gold">Servicios</a>
+            <a href="#nosotros" onclick="toggleMobileMenu()"
+                class="block text-brand-charcoal hover:text-brand-gold">Quiénes Somos</a>
+            <a href="#codigo-etica" onclick="toggleMobileMenu()"
+                class="block text-brand-charcoal hover:text-brand-gold">Código de Ética</a>
+            <div class="pt-4 flex justify-between items-center">
+                <button onclick="toggleFavoritosPanel(); toggleMobileMenu()"
+                    class="flex items-center space-x-2 text-brand-red">
+                    <i class="fa-solid fa-heart"></i>
+                    <span class="text-sm">Mis Favoritos</span>
+                </button>
+                <a href="https://wa.me/526671520988"
+                    class="bg-brand-red text-brand-ivory px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-sm">
+                    Contacto directo
+                </a>
+            </div>
+        </div>
+    </header>
